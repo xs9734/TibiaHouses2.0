@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Tibia Houses</title>
+  </head>
+  <body>
+        <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/houseslogo.png" width="32" height="32" class="d-inline-block align-top" alt="" loading="lazy">
+            Tibia Houses
+          </a>
+        <a class="nav-link" href="#">Watchlist</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select World
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Only</a>
+                    <a class="dropdown-item" href="#">Nefera</a>
+                    <a class="dropdown-item" href="#">for now</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <!-- Houses List -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New on the Market</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="end-tab" data-toggle="tab" href="#end" role="tab" aria-controls="end" aria-selected="true">Ending Soon</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="abd-tab" data-toggle="tab" href="#abd" role="tab" aria-controls="abd" aria-selected="true">Ab'Dendriel</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="ank-tab" data-toggle="tab" href="#ank" role="tab" aria-controls="ank" aria-selected="true" type="button" onclick="loadAn()">Ankrahmun</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="car-tab" data-toggle="tab" href="#car" role="tab" aria-controls="car" aria-selected="true">Carlin</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="dar-tab" data-toggle="tab" href="#dar" role="tab" aria-controls="dar" aria-selected="false">Darashia</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="edr-tab" data-toggle="tab" href="#edr" role="tab" aria-controls="edr" aria-selected="false">Edron</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="far-tab" data-toggle="tab" href="#far" role="tab" aria-controls="far" aria-selected="false">Farmine</a>
+          </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="gra-tab" data-toggle="tab" href="#gra" role="tab" aria-controls="gra" aria-selected="false">Gray Beach</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="iss-tab" data-toggle="tab" href="#iss" role="tab" aria-controls="iss" aria-selected="false">Issavi</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="kaz-tab" data-toggle="tab" href="#kaz" role="tab" aria-controls="kaz" aria-selected="false">Kazordoon</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="lib-tab" data-toggle="tab" href="#lib" role="tab" aria-controls="lib" aria-selected="false">Liberty Bay</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="por-tab" data-toggle="tab" href="#por" role="tab" aria-controls="por" aria-selected="false">Port Hope</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="rat-tab" data-toggle="tab" href="#rat" role="tab" aria-controls="rat" aria-selected="false">Rathleton</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="sva-tab" data-toggle="tab" href="#sva" role="tab" aria-controls="sva" aria-selected="false">Svargrond</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tha-tab" data-toggle="tab" href="#tha" role="tab" aria-controls="tha" aria-selected="false">Thais</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="ven-tab" data-toggle="tab" href="#ven" role="tab" aria-controls="ven" aria-selected="false">Venore</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="yal-tab" data-toggle="tab" href="#yal" role="tab" aria-controls="yal" aria-selected="false">Yalahar</a>
+        </li>
+    </ul>
+    <div class="container">
+    <div class="input-group mb-5">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="occupied-filter">
+            <label class="custom-control-label" for="occupied-filter">          
+                Show all houses
+            </label>
+          </div>
+
+      </div>
+    </div>
+        <!-- Body -->
+        <!-- Special Categories -->
+    <div class="tab-content container-fluid" id="myTabContent">
+        <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                <div class="card house-cards">
+                    <img src="https://static.tibia.com/images/houses/house_58009.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title house_name">{houseName}</h5>
+                        <p class="card-text house_size">{house_size}</p>
+                        <p class="card-text house_beds">{house_beds}</p>
+                        <p class="card-text house_rent">{houseRent}</p>
+                        <p class="card-text house_bid">{houseStatus}</p>
+                        <p class="card-text house_time">{house_time}</p>
+                        <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=Ankrahmun&state=&type=houses&order=&houseid=58009" target=”_blank” class="btn btn-primary">Open in Tibia.com</a>
+                    </div>
+                </div>
+                <div class="card house-cards">
+                    <img src="images/house_0000.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title house_name">{houseName}</h5>
+                        <p class="card-text house_size">{house_size}</p>
+                        <p class="card-text house_beds">{house_beds}</p>
+                        <p class="card-text house_rent">{houseRent}</p>
+                        <p class="card-text house_bid">{houseStatus}</p>
+                        <p class="card-text house_time">{house_time}</p>
+                        <a href="#" class="btn btn-primary">{house_link}</a>
+                    </div>
+                </div>
+                <div class="card house-cards">
+                    <img src="images/house_0000.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title house_name">{houseName}</h5>
+                        <p class="card-text house_size">{house_size}</p>
+                        <p class="card-text house_beds">{house_beds}</p>
+                        <p class="card-text house_rent">{houseRent}</p>
+                        <p class="card-text house_bid">{houseStatus}</p>
+                        <p class="card-text house_time">{house_time}</p>
+                        <a href="#" class="btn btn-primary">{house_link}</a>
+                    </div>
+                </div>
+                <div class="card house-cards">
+                    <img src="images/house_0000.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title house_name">{houseName}</h5>
+                        <p class="card-text house_size">{house_size}</p>
+                        <p class="card-text house_beds">{house_beds}</p>
+                        <p class="card-text house_rent">{houseRent}</p>
+                        <p class="card-text house_bid">{houseStatus}</p>
+                        <p class="card-text house_time">{house_time}</p>
+                        <a href="#" class="btn btn-primary">{house_link}</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="end" role="tabpanel" aria-labelledby="end-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+                    Wait! I haven't finished it!
+                </div>
+            </div>
+        </div>
+        <!-- Towns -->
+        <div class="tab-pane fade" id="abd" role="tabpanel" aria-labelledby="abd-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ank" role="tabpanel" aria-labelledby="ank-tab">
+            <div>
+                <div class="row mt-5 justify-content-center" id="house-info">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="dar" role="tabpanel" aria-labelledby="dar-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="edr" role="tabpanel" aria-labelledby="edr-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="far" role="tabpanel" aria-labelledby="far-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="gra" role="tabpanel" aria-labelledby="gra-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="iss" role="tabpanel" aria-labelledby="iss-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="kaz" role="tabpanel" aria-labelledby="kaz-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="lib" role="tabpanel" aria-labelledby="lib-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="por" role="tabpanel" aria-labelledby="por-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="rat" role="tabpanel" aria-labelledby="rat-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="sva" role="tabpanel" aria-labelledby="sva-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tha" role="tabpanel" aria-labelledby="tha-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ven" role="tabpanel" aria-labelledby="ven-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="yal" role="tabpanel" aria-labelledby="yal-tab">
+            <div>
+                <div class="row mt-5 justify-content-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>  
+  </body>
+</html>

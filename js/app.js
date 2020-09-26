@@ -2,6 +2,9 @@ var dataContainer = document.getElementById("house-info");
 var occupiedFilter = document.getElementById("occupied-filter")
 var citySelected = `Edron`;
 
+function loadEnd(){
+  loadAll();
+}
 function loadAbd(){
   citySelected=`Ab'Dendriel`;
   dataContainer = document.getElementById(`house-info-${citySelected}`);
@@ -52,12 +55,12 @@ function loadLib(){
   dataContainer = document.getElementById(`house-info-${citySelected}`);
   loadCity();
 }
-function Por(){
+function loadPor(){
   citySelected = `Port Hope`;
   dataContainer = document.getElementById(`house-info-${citySelected}`);
   loadCity();
 }
-function Rat(){
+function loadRat(){
   citySelected = `Rathleton`;
   dataContainer = document.getElementById(`house-info-${citySelected}`);
   loadCity();
@@ -97,7 +100,7 @@ function loadHouses(){
           return;
         }
         response.json().then(function(data) {
-          console.log('Ankrahmun homes Loaded Succesfully');
+          console.log(`${citySelected} homes Loaded Succesfully`);
           var f = document.getElementById("occupied-filter").checked;
             console.log("Status is currently" + f);
           console.log(data.houses.houses.length);
@@ -122,6 +125,7 @@ function loadHouses(){
                   var bidAmount_input = houseStatus.substring(houseStatus.indexOf("(")+1, houseStatus.indexOf(" gold"));
                   var bidAmount_output= bidAmount_input;
                   var houseBid = parseInt(bidAmount_output, 10);
+                  var houseTime = houseStatus.substring(houseStatus.indexOf("; ")+1, houseStatus.indexOf(")"));
                   var badge = document.createElement('div');
                 badge.className = 'card house-cards';
                 badge.innerHTML =
@@ -134,7 +138,8 @@ function loadHouses(){
                 <p class="card-text house_rent">${houseRent.toLocaleString("en")} gps</p>
                 <p class="card-text house_status">${houseStatusString}</p>
                 <p class="card-text house_bid">Current Bid: </br>${houseBid.toLocaleString("en")} gps</p>
-                <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=Ankrahmun&state=&type=houses&order=&houseid=${houseID}" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
+                <p class="card-text house_time">${houseTime}</p>
+                <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=${citySelected}&state=&type=houses&order=&houseid=${houseID}" target="_blank" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
                 </div>
                 `
                 ;
@@ -153,15 +158,10 @@ function loadHouses(){
               badge.className = 'card house-cards';
               badge.innerHTML =
               `
-              <img src="images/house_0000.png" class="card-img-top" alt="...">
+              <img src="images/404.jpg" class="card-img-top" alt="...">
               <div class="card-body">
               <h5 class="card-title house_name">No houses here :(</h5>
-              <p class="card-text house_size">{houseSize}</p>
-              <p class="card-text house_beds">{houseBeds}</p>
-              <p class="card-text house_rent">{houseRent}</p>
-              <p class="card-text house_bid">{houseStatus}</p>
-              <p class="card-text house_time">{house_time}</p>
-              <a href="#" class="btn btn-primary">{house_link}</a>
+              <p class="card-text house_size">NO HOUSE FOR U</p>
               </div>
               `
               dataContainer.appendChild(badge);
@@ -180,6 +180,7 @@ function loadHouses(){
               var houseStatus = allHomes[i].status;
               var houseID = allHomes[i].houseid;
               if (data.houses.houses[i].status !== "rented"){
+                var houseTime = houseStatus.substring(houseStatus.indexOf("; ")+1, houseStatus.indexOf(")"));
                 var houseStatusString = houseStatus.substring(houseStatus.indexOf("auctioned"), houseStatus.indexOf(" ("));
                 var bidAmount_input = houseStatus.substring(houseStatus.indexOf("(")+1, houseStatus.indexOf(" gold"));
                 var bidAmount_output= bidAmount_input;
@@ -200,7 +201,8 @@ function loadHouses(){
             <p class="card-text house_rent">${houseRent.toLocaleString("en")} gps</p>
             <p class="card-text house_status">${houseStatusString}</p>
             <p class="card-text house_bid">Current Bid: </br>${houseBid.toLocaleString("en")} gps</p>
-            <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=Ankrahmun&state=&type=houses&order=&houseid=${houseID}" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
+            <p class="card-text house_time">${houseTime}</p>
+            <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=${citySelected}&state=&type=houses&order=&houseid=${houseID}" target="_blank" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
             </div>
             `
             }
@@ -217,7 +219,8 @@ function loadHouses(){
               <p class="card-text house_beds">{house_beds}</p>
               <p class="card-text house_rent">${houseRent.toLocaleString("en")} gps</p>
               <p class="card-text house_status">${houseStatus}</p>
-              <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=Ankrahmun&state=&type=houses&order=&houseid=${houseID}" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
+              <p class="card-text house_time">Currently owned by <a href="https://www.tibia.com/community/?subtopic=characters&name=Durin" target="_blank"> Durin </a></p>
+              <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=${citySelected}&state=&type=houses&order=&houseid=${houseID}" target="_blank" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
               </div>
               `
             }

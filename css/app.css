@@ -1,9 +1,36 @@
+bodsy{
+    background-image: linear-gradient(to right, #0F2027, #11252e); 
+    background-image: -webkit-linear-gradient(to right, #0F2027, #11252e); 
+}
+.bg-cards{
+    background-color: rgba(39, 38, 39, 0.26);
+}
+
+.card-header{
+    background-color: rgba(15, 255, 35, 0.925);
+    font-weight: 600;
+}
+.occupied{
+    background-color: rgba(255, 23, 15, 0.925);
+}
+
+
 .house-cards{
-    width: 12rem;
+    width: 25vh;
     margin:10px;
 }
-/*    DECREASE HEIGHT BUT DON'T TOUCH WIDTH! CENTERED CROP? I DUNNO TOO LAZY
-.card-img-top{
-    max-height: 150px;
+
+.house-info-label{
+    font-style: italic;
 }
-*/
+.house-info-value{
+    font-size:1.1rem;
+}
+
+.bg-gradient-1 {
+    background: #10101a;
+
+}
+.rounded {
+    border-radius: 1rem !important;
+}

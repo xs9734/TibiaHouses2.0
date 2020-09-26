@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/app.css">
     <title>Tibia Houses</title>
   </head>
-  <body>
+  <body class="bg-dark">
         <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
@@ -42,7 +42,7 @@
             <a class="nav-link active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New on the Market</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="end-tab" data-toggle="tab" href="#end" role="tab" aria-controls="end" aria-selected="true">Ending Soon</a>
+            <a class="nav-link" id="end-tab" data-toggle="tab" href="#end" role="tab" aria-controls="end" aria-selected="true" onclick="loadEnd()">Ending Soon</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="abd-tab" data-toggle="tab" href="#abd" role="tab" aria-controls="abd" aria-selected="true" onclick="loadAbd()">Ab'Dendriel</a>
@@ -97,7 +97,7 @@
     <div class="input-group mb-5">
         <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="occupied-filter">
-            <label class="custom-control-label" for="occupied-filter">          
+            <label class="custom-control-label text-white" for="occupied-filter">          
                 Show all houses
             </label>
           </div>
@@ -109,54 +109,154 @@
         <!-- Special Categories -->
         <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
             <div class="container">
-                <div class="row mt-5 justify-content-center">
-                <div class="card house-cards">
-                    <img src="https://static.tibia.com/images/houses/house_58009.png" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title house_name">{houseName}</h5>
-                        <p class="card-text house_size">{house_size}</p>
-                        <p class="card-text house_beds">{house_beds}</p>
-                        <p class="card-text house_rent">{houseRent}</p>
-                        <p class="card-text house_bid">{houseStatus}</p>
-                        <p class="card-text house_time">{house_time}</p>
-                        <a class="btn btn-primary mt-auto" href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=Ankrahmun&state=&type=houses&order=&houseid=58009" target=”_blank” >Open in Tibia.com</a>
+                <div class="row mt-5 justify-content-center ">
+                <div class="card house-cards rounded bg-cards text-white shadow text-center mb-5">
+                    <img src="https://static.tibia.com/images/houses/house_58009.png" class="card-img-top rounded p-2" alt="...">
+                    <div class="card-header text-dark">
+                        Castle of the Winds
                     </div>
+                    <div class="card-block">
+                        <div class="row house-info-label">
+                            <div class="col-6">Size:</div>
+                            <div class="col-6">Beds:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">134 SQM</div>
+                            <div class="col-6">12</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-6">Rent:</div>
+                            <div class="col-6">Town:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">200,000</div>
+                            <div class="col-6">Kazordoon</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-12">Current Bid:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-12">4,230,050 gp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"></div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-12">5 days left</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary rounded m-2">{house_link}</a>
                 </div>
-                <div class="card house-cards">
-                    <img src="images/house_0000.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title house_name">{houseName}</h5>
-                        <p class="card-text house_size">{house_size}</p>
-                        <p class="card-text house_beds">{house_beds}</p>
-                        <p class="card-text house_rent">{houseRent}</p>
-                        <p class="card-text house_bid">{houseStatus}</p>
-                        <p class="card-text house_time">{house_time}</p>
-                        <a href="#" class="btn btn-primary">{house_link}</a>
+                <div class="card house-cards rounded bg-cards text-white shadow text-center mb-5">
+                    <img src="https://static.tibia.com/images/houses/house_58009.png" class="card-img-top rounded p-2" alt="...">
+                    <div class="card-header text-dark">
+                        House of Recreation
                     </div>
+                    <div class="card-block">
+                        <div class="row house-info-label">
+                            <div class="col-6">Size:</div>
+                            <div class="col-6">Beds:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">134 SQM</div>
+                            <div class="col-6">12</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-6">Rent:</div>
+                            <div class="col-6">Town:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">200,000</div>
+                            <div class="col-6">Ankrahmun</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-12">Current Bid:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-12">4,230,050 gp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"></div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-12">5 days left</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary rounded m-2">{house_link}</a>
                 </div>
-                <div class="card house-cards">
-                    <img src="images/house_0000.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title house_name">{houseName}</h5>
-                        <p class="card-text house_size">{house_size}</p>
-                        <p class="card-text house_beds">{house_beds}</p>
-                        <p class="card-text house_rent">{houseRent}</p>
-                        <p class="card-text house_bid">{houseStatus}</p>
-                        <p class="card-text house_time">{house_time}</p>
-                        <a href="#" class="btn btn-primary">{house_link}</a>
+                <div class="card house-cards rounded bg-cards text-white shadow text-center mb-5">
+                    <img src="https://static.tibia.com/images/houses/house_58009.png" class="card-img-top rounded p-2" alt="...">
+                    <div class="card-header text-dark">
+                        Fibula Clanhall
                     </div>
+                    <div class="card-block">
+                        <div class="row house-info-label">
+                            <div class="col-6">Size:</div>
+                            <div class="col-6">Beds:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">134 SQM</div>
+                            <div class="col-6">12</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-6">Rent:</div>
+                            <div class="col-6">Town:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">200,000</div>
+                            <div class="col-6">Liberty Bay</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-12">Current Bid:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-12">4,230,050 gp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"></div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-12">5 days left</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary rounded m-2">Open in Tibia.com</a>
                 </div>
-                <div class="card house-cards">
-                    <img src="images/house_0000.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title house_name">{houseName}</h5>
-                        <p class="card-text house_size">{house_size}</p>
-                        <p class="card-text house_beds">{house_beds}</p>
-                        <p class="card-text house_rent">{houseRent}</p>
-                        <p class="card-text house_bid">{houseStatus}</p>
-                        <p class="card-text house_time">{house_time}</p>
-                        <a href="#" class="btn btn-primary">{house_link}</a>
+                <div class="card house-cards rounded bg-cards text-white shadow text-center mb-5">
+                    <img src="https://static.tibia.com/images/houses/house_58009.png" class="card-img-top rounded p-2" alt="...">
+                    <div class="card-header occupied text-white">
+                        Hall of the Adventurers
                     </div>
+                    <div class="card-block">
+                        <div class="row house-info-label">
+                            <div class="col-6">Size:</div>
+                            <div class="col-6">Beds:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">134 SQM</div>
+                            <div class="col-6">12</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-6">Rent:</div>
+                            <div class="col-6">Town:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">200,000</div>
+                            <div class="col-6">Venore</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-12">Currently Occupied:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-12">Ric Nexus</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"></div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-12">~~</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary rounded m-2">Open in Tibia.com</a>
                 </div>
                 </div>
             </div>

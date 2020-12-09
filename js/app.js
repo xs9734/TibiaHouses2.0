@@ -127,19 +127,44 @@ function loadHouses(){
                   var houseBid = parseInt(bidAmount_output, 10);
                   var houseTime = houseStatus.substring(houseStatus.indexOf("; ")+1, houseStatus.indexOf(")"));
                   var badge = document.createElement('div');
-                badge.className = 'card house-cards';
+                badge.className = 'card house-cards rounded bg-cards text-white shadow text-center mb-5';
                 badge.innerHTML =
                 `
-                <img src="https://static.tibia.com/images/houses/house_${houseID}.png" class="card-img-top" alt="...">
-                <div class="card-body d-flex flex-column">
-                <h5 class="card-title house_name">${houseName}</h5>
-                <p class="card-text house_size">${houseSize} sqm</p>
-                <p class="card-text house_beds">{house_beds}</p>
-                <p class="card-text house_rent">${houseRent.toLocaleString("en")} gps</p>
-                <p class="card-text house_status">${houseStatusString}</p>
-                <p class="card-text house_bid">Current Bid: </br>${houseBid.toLocaleString("en")} gps</p>
-                <p class="card-text house_time">${houseTime}</p>
-                <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=${citySelected}&state=&type=houses&order=&houseid=${houseID}" target="_blank" class="btn btn-primary mt-auto"> Open on Tibia.com</a>
+                <img src="https://static.tibia.com/images/houses/house_${houseID}.png" class="card-img-top rounded p-2" alt="...">
+                    <div class="card-header text-dark">
+                        ${houseName}
+                    </div>
+                    <div class="card-block">
+                        <div class="row house-info-label">
+                            <div class="col-6">Size:</div>
+                            <div class="col-6">Beds:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">${houseSize} SQM</div>
+                            <div class="col-6">0</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-6">Rent:</div>
+                            <div class="col-6">Town:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-6">${houseRent.toLocaleString("en")} gps</div>
+                            <div class="col-6">Kazordoon</div>
+                        </div>
+                        <div class="row house-info-label">
+                            <div class="col-12">Current Bid:</div>
+                        </div>
+                        <div class="row house-info-value">
+                            <div class="col-12">${houseBid.toLocaleString("en")} gps</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"></div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-12">${houseTime}</div>
+                        </div>
+                    </div>
+                    <a href="https://www.tibia.com/community/?subtopic=houses&page=view&world=Nefera&town=${citySelected}&state=&type=houses&order=&houseid=${houseID}" target="_blank" class="btn btn-primary rounded m-2">Open on Tibia.com</a>
                 </div>
                 `
                 ;

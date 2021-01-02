@@ -31,3 +31,6 @@
 .rounded {
     border-radius: 1rem !important;
 }
+.nav-item {
+    border:unset !important;
+}

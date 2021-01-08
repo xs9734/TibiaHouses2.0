@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TibiaHouses2.0.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guildhalls.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guildhalls.html" beforeDir="false" afterPath="$PROJECT_DIR$/guildhalls.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/gh.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/gh.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610090987428</updated>
-      <workItem from="1610090989255" duration="1328000" />
+      <workItem from="1610090989255" duration="3063000" />
     </task>
     <servers />
   </component>

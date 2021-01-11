@@ -24,8 +24,6 @@
 </ul>
 <div class="container">
     <div class="row">
-            <!--<div class="col s3"></div>
-                <div class="col s9"></div>-->
         <div class="col s12 m12 l3">
             <form id="theForm" style="padding-top:20px;">
                 <div class="input-field col s12">
@@ -34,12 +32,12 @@
                     <label>Select Server</label>
                 </div>
                 <div class="input-field col s12">
-                    <select id="selectCity" required multiple>
+                    <select id="selectCity" required> <!--multiple-->
                     </select>
                     <label>Select City</label>
                 </div>
                 <div class="input-field col s12">
-                    <select id="selectBuilding" required multiple>
+                    <select id="selectBuilding" required> <!--multiple-->
                     </select>
                     <label>Select Building Type</label>
                 </div>
@@ -48,19 +46,19 @@
                         <label> Include Occupied?</label><br>
                         <label>
                             No
-                            <input type="checkbox">
+                            <input type="checkbox" id="occupied">
                             <span class="lever"></span>
                             Yes
                         </label>
                     </div>
                 </div>
                 <div class="input-field col s12">
-                    <a class="waves-effect waves-light btn">Submit</a>
+                    <a class="waves-effect waves-light btn" onClick="test()">Submit</a>
                 </div>
             </form>
         </div>
         <div class="col s12 m12 l9">
-            <table class=" highlight">
+            <table class="highlight">
                 <thead>
                 <tr>
                     <th>Name</th>

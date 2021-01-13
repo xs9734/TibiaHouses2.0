@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="">
+    <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="recheck checkbox for issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/rework.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/rework.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/new.html" afterDir="false" />
     </list>
@@ -52,8 +53,17 @@
       <workItem from="1610095768078" duration="5879000" />
       <workItem from="1610257628942" duration="593000" />
       <workItem from="1610349707549" duration="1895000" />
-      <workItem from="1610355580843" duration="12328000" />
+      <workItem from="1610355580843" duration="12388000" />
+      <workItem from="1610401516553" duration="3610000" />
     </task>
+    <task id="LOCAL-00001" summary="recheck checkbox for issues">
+      <created>1610369389634</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610369389634</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,5 +83,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="recheck checkbox for issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="recheck checkbox for issues" />
   </component>
 </project>

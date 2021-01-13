@@ -323,3 +323,11 @@ function addtextBox()
 {
   console.log("text added");
 }
+
+for (let i=0;i<building.length;i++){
+  let opt = building[i]
+  let el = document.createElement("option")
+  el.textContent=opt
+  el.value=opt
+  formBuilding.appendChild(el)
+}

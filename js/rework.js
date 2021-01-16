@@ -41,6 +41,7 @@ for (let i=0;i<building.length;i++){
 }
 
 function test(){
+    dataContainer.innerHTML = "";
     let a = formServer.value
     let b = formCity.value
     let c = formBuilding.value

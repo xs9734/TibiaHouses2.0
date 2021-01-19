@@ -106,7 +106,7 @@ function loadJSON(a,b,c,d){
                 }
             }
             else{
-                console.log('what.')
+                console.log('error')
             }
         })
     })

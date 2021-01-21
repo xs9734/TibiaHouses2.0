@@ -92,8 +92,7 @@ function loadCity(){
 }
 
 function loadHouses(){  
-    fetch(`https://api.tibiadata.com/v2/houses/Nefera/${citySelected}.json`)
-    .then(
+    fetch(`https://api.tibiadata.com/v2/houses/Nefera/${citySelected}.json`).then(
       function(response) {
         if (response.status !== 200) {
           console.log('Looks like there was a problem. Status Code: ' + response.status);

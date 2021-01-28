@@ -939,7 +939,34 @@ function loadHouseList(){
                         if(data.house.status.onwer_new !== null){
                             var str = data.house.status.original
                             if (str.endsWith("gold coins.")==true){
-                                console.log(data.house.name + " " + data.house.houseid);
+                                console.log(data.house.name + " - " + data.house.houseid);
+                                console.log(data.house.status.original);
+                            }
+                        }
+                    }
+
+                })
+            }
+        )
+        counter++;
+    }
+
+}
+function loadHouseListAntica(){
+    for(let i=0 ; i <houseArray.length; i++){
+        let houseArrayCounted = `https://api.tibiadata.com/v2/house/Antica/${houseArray[counter]}.json`
+        fetch(houseArrayCounted).then(
+            function(response){
+                if (response.status !== 200){
+                    console.log(`looks like there was a problem. Status Code: ` + response.status);
+                    return;
+                }
+                response.json().then(function(data){
+                    if(data.house.status.auction == false){
+                        if(data.house.status.onwer_new !== null){
+                            var str = data.house.status.original
+                            if (str.endsWith("gold coins.")==true){
+                                console.log(data.house.name + " - " + data.house.houseid);
                                 console.log(data.house.status.original);
                             }
                         }

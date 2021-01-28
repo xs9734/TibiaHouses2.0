@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="semi automated house transfer checker added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/houseChecker.html" beforeDir="false" afterPath="$PROJECT_DIR$/houseChecker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/houses.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/houses.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +68,7 @@
       <workItem from="1611202090601" duration="800000" />
       <workItem from="1611216305766" duration="3762000" />
       <workItem from="1611823212459" duration="21000" />
-      <workItem from="1611878054512" duration="89000" />
+      <workItem from="1611878054512" duration="174000" />
     </task>
     <task id="LOCAL-00001" summary="recheck checkbox for issues">
       <created>1610369389634</created>
@@ -100,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611220085075</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="semi automated house transfer checker added">
+      <created>1611878158526</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611878158526</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

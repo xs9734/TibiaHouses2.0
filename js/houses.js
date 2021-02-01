@@ -3,6 +3,14 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.sidenav').sidenav();
 });
+
+let testArray = [58004,
+    35017,
+    30104,
+    55125,
+    30603,
+    59074
+]
 let houseArray = [10006,
     10007,
     10101,
@@ -939,8 +947,16 @@ function loadHouseList(){
                         if(data.house.status.onwer_new !== null){
                             var str = data.house.status.original
                             if (str.endsWith("gold coins.")==true){
-                                console.log(data.house.name + " - " + data.house.houseid);
-                                console.log(data.house.status.original);
+                                var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
+                                var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
+                                console.log("------------");
+                                console.log(data.house.name);
+                                console.log(data.house.houseid);
+                                console.log(seller);
+                                console.log(buyer);
+                                console.log(transferAmount_input);
+                                console.log("------------");
                             }
                         }
                     }
@@ -966,8 +982,53 @@ function loadHouseListAntica(){
                         if(data.house.status.onwer_new !== null){
                             var str = data.house.status.original
                             if (str.endsWith("gold coins.")==true){
-                                console.log(data.house.name + " - " + data.house.houseid);
-                                console.log(data.house.status.original);
+                                var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
+                                var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
+                                console.log("------------");
+                                console.log(data.house.name);
+                                console.log(data.house.houseid);
+                                console.log(seller);
+                                console.log(buyer);
+                                console.log(transferAmount_input);
+                                console.log("------------");
+                            }
+                        }
+                    }
+
+                })
+            }
+        )
+        counter++;
+    }
+
+}
+
+
+function loadTestList(){
+    for(let i=0 ; i <testArray.length; i++){
+        let houseArrayCounted = `https://api.tibiadata.com/v2/house/Nefera/${testArray[counter]}.json`
+        fetch(houseArrayCounted).then(
+            function(response){
+                if (response.status !== 200){
+                    console.log(`looks like there was a problem. Status Code: ` + response.status);
+                    return;
+                }
+                response.json().then(function(data){
+                    if(data.house.status.auction == false){
+                        if(data.house.status.onwer_new !== null){
+                            var str = data.house.status.original
+                            if (str.endsWith("gold coins.")==true){
+                                var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
+                                var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
+                                console.log("------------");
+                                console.log(data.house.name);
+                                console.log(data.house.houseid);
+                                console.log(seller);
+                                console.log(buyer);
+                                console.log(transferAmount_input);
+                                console.log("------------");
                             }
                         }
                     }

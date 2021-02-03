@@ -3,13 +3,12 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.sidenav').sidenav();
 });
-
-let testArray = [58004,
-    35017,
-    30104,
-    55125,
-    30603,
-    59074
+const dataContainer = document.getElementById("dataContainer")
+let testArray = [20802,
+    59070,
+    20007,
+    20605,
+    50405
 ]
 let houseArray = [10006,
     10007,
@@ -957,6 +956,18 @@ function loadHouseList(){
                                 console.log(buyer);
                                 console.log(transferAmount_input);
                                 console.log("------------");
+                                let houseinfo = document.createElement("tr")
+                                houseinfo.innerHTML=
+                                    `
+                                    <td>${data.house.houseid}</td>
+                                    <td>${data.house.name}</td>
+                                    <td>${seller}</td>
+                                    <td>${buyer}</td>
+                                    <td>${transferAmount_input}</td>
+                                    <td>nefera</td>
+                                    <td>${data.house.status.original}</td>
+                                    `
+                                dataContainer.appendChild(houseinfo)
                             }
                         }
                     }
@@ -992,6 +1003,18 @@ function loadHouseListAntica(){
                                 console.log(buyer);
                                 console.log(transferAmount_input);
                                 console.log("------------");
+                                let houseinfo = document.createElement("tr")
+                                houseinfo.innerHTML=
+                                    `
+                                    <td>${data.house.houseid}</td>
+                                    <td>${data.house.name}</td>
+                                    <td>${seller}</td>
+                                    <td>${buyer}</td>
+                                    <td>${transferAmount_input}</td>
+                                    <td>antica</td>
+                                    <td>${data.house.status.original}</td>
+                                    `
+                                dataContainer.appendChild(houseinfo)
                             }
                         }
                     }
@@ -1021,6 +1044,7 @@ function loadTestList(){
                             if (str.endsWith("gold coins.")==true){
                                 var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
                                 var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transfer_date = str.substring(str.indexOf("move out on")+12, str.indexOf("(time of daily server save)"))
                                 var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
                                 console.log("------------");
                                 console.log(data.house.name);
@@ -1029,6 +1053,19 @@ function loadTestList(){
                                 console.log(buyer);
                                 console.log(transferAmount_input);
                                 console.log("------------");
+                                let houseinfo = document.createElement("tr")
+                                houseinfo.innerHTML=
+                                    `
+                                    <td>${data.house.houseid}</td>
+                                    <td>${data.house.name}</td>
+                                    <td>${seller}</td>
+                                    <td>${buyer}</td>
+                                    <td>${transferAmount_input}</td>
+                                    <td>ServerName</td>
+                                    <td>${transfer_date}</td>
+                                    <td>${data.house.status.original}</td>
+                                    `
+                                dataContainer.appendChild(houseinfo)
                             }
                         }
                     }

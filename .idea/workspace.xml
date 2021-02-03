@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="semi automated house transfer checker added">
+    <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="better list">
+      <change afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/houseChecker.html" beforeDir="false" afterPath="$PROJECT_DIR$/houseChecker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/houses.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/houses.js" afterDir="false" />
@@ -37,6 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -71,7 +73,11 @@
       <workItem from="1611216305766" duration="3762000" />
       <workItem from="1611823212459" duration="21000" />
       <workItem from="1611878054512" duration="195000" />
-      <workItem from="1612163063187" duration="2515000" />
+      <workItem from="1612163063187" duration="2538000" />
+      <workItem from="1612227333860" duration="1221000" />
+      <workItem from="1612236465402" duration="1437000" />
+      <workItem from="1612252006904" duration="385000" />
+      <workItem from="1612341280053" duration="2265000" />
     </task>
     <task id="LOCAL-00001" summary="recheck checkbox for issues">
       <created>1610369389634</created>
@@ -115,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611878237276</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="better list">
+      <created>1612165610869</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612165610869</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +157,7 @@
     <MESSAGE value="recheck checkbox for issues" />
     <MESSAGE value="sortable tables" />
     <MESSAGE value="semi automated house transfer checker added" />
-    <option name="LAST_COMMIT_MESSAGE" value="semi automated house transfer checker added" />
+    <MESSAGE value="better list" />
+    <option name="LAST_COMMIT_MESSAGE" value="better list" />
   </component>
 </project>

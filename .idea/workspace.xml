@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="better list">
-      <change afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/houseChecker.html" beforeDir="false" afterPath="$PROJECT_DIR$/houseChecker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/houses.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/houses.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +75,8 @@
       <workItem from="1612227333860" duration="1221000" />
       <workItem from="1612236465402" duration="1437000" />
       <workItem from="1612252006904" duration="385000" />
-      <workItem from="1612341280053" duration="2265000" />
+      <workItem from="1612341280053" duration="2325000" />
+      <workItem from="1612343807235" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="recheck checkbox for issues">
       <created>1610369389634</created>
@@ -128,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612165610869</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="better list">
+      <created>1612343727051</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612343727051</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

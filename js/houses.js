@@ -948,6 +948,7 @@ function loadHouseList(){
                             if (str.endsWith("gold coins.")==true){
                                 var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
                                 var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transfer_date = str.substring(str.indexOf("move out on")+12, str.indexOf("(time of daily server save)"))
                                 var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
                                 console.log("------------");
                                 console.log(data.house.name);
@@ -964,7 +965,8 @@ function loadHouseList(){
                                     <td>${seller}</td>
                                     <td>${buyer}</td>
                                     <td>${transferAmount_input}</td>
-                                    <td>nefera</td>
+                                    <td>Nefera</td>
+                                    <td>${transfer_date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
                                 dataContainer.appendChild(houseinfo)
@@ -995,6 +997,7 @@ function loadHouseListAntica(){
                             if (str.endsWith("gold coins.")==true){
                                 var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
                                 var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transfer_date = str.substring(str.indexOf("move out on")+12, str.indexOf("(time of daily server save)"))
                                 var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
                                 console.log("------------");
                                 console.log(data.house.name);
@@ -1011,7 +1014,8 @@ function loadHouseListAntica(){
                                     <td>${seller}</td>
                                     <td>${buyer}</td>
                                     <td>${transferAmount_input}</td>
-                                    <td>antica</td>
+                                    <td>Antica</td>
+                                    <td>${transfer_date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
                                 dataContainer.appendChild(houseinfo)

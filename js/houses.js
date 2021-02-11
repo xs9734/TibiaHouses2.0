@@ -1030,7 +1030,55 @@ function loadHouseListAntica(){
     }
 
 }
+function loadHouseListSecura(){
+    for(let i=0 ; i <houseArray.length; i++){
+        let houseArrayCounted = `https://api.tibiadata.com/v2/house/Secura/${houseArray[counter]}.json`
+        fetch(houseArrayCounted).then(
+            function(response){
+                if (response.status !== 200){
+                    console.log(`looks like there was a problem. Status Code: ` + response.status);
+                    return;
+                }
+                response.json().then(function(data){
+                    if(data.house.status.auction == false){
+                        if(data.house.status.onwer_new !== null){
+                            var str = data.house.status.original
+                            if (str.endsWith("gold coins.")==true){
+                                var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
+                                var buyer = str.substring(str.indexOf("pass the house to")+18, str.indexOf("for"))
+                                var transfer_date = str.substring(str.indexOf("move out on")+12, str.indexOf("(time of daily server save)"))
+                                var transferAmount_input = str.substring(str.indexOf("for")+4, str.indexOf(" gold"));
+                                console.log("------------");
+                                console.log(data.house.name);
+                                console.log(data.house.houseid);
+                                console.log(seller);
+                                console.log(buyer);
+                                console.log(transferAmount_input);
+                                console.log("------------");
+                                let houseinfo = document.createElement("tr")
+                                houseinfo.innerHTML=
+                                    `
+                                    <td>${data.house.houseid}</td>
+                                    <td>${data.house.name}</td>
+                                    <td>${seller}</td>
+                                    <td>${buyer}</td>
+                                    <td>${transferAmount_input}</td>
+                                    <td>Secura</td>
+                                    <td>${transfer_date}</td>
+                                    <td>${data.house.status.original}</td>
+                                    `
+                                dataContainer.appendChild(houseinfo)
+                            }
+                        }
+                    }
 
+                })
+            }
+        )
+        counter++;
+    }
+
+}
 
 function loadTestList(){
     for(let i=0 ; i <testArray.length; i++){

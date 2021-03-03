@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e297d453-fc62-42b0-abf9-08d88463fc1c" name="Default Changelist" comment="better list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/houseChecker.html" beforeDir="false" afterPath="$PROJECT_DIR$/houseChecker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/houses.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/houses.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,10 @@
       <workItem from="1612341280053" duration="2325000" />
       <workItem from="1612343807235" duration="87000" />
       <workItem from="1612344133252" duration="212000" />
-      <workItem from="1613032554833" duration="571000" />
+      <workItem from="1613032554833" duration="676000" />
+      <workItem from="1613868073745" duration="669000" />
+      <workItem from="1614483956607" duration="48000" />
+      <workItem from="1614663410681" duration="3447000" />
     </task>
     <task id="LOCAL-00001" summary="recheck checkbox for issues">
       <created>1610369389634</created>
@@ -150,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613033006245</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Secura tracking starts">
+      <created>1613033228993</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1613033228993</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -74,7 +74,7 @@ let houseArray = [10006, 10007, 10101, 10102, 10103, 10104, 10112, 10113, 10114,
     65019, 65020, 65021, 65022]
 let counter = 0
 
-function loadHouseList(){
+function loadHouseListNefera(){
     for(let i=0 ; i <houseArray.length; i++){
         let houseArrayCounted = `https://api.tibiadata.com/v2/house/Nefera/${houseArray[counter]}.json`
         fetch(houseArrayCounted).then(

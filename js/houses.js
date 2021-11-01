@@ -95,20 +95,20 @@ function loadHouseListNefera(){
                                 console.log("------------");
                                 console.log(data.house.name);
                                 console.log(data.house.houseid);
-                                console.log(seller);
-                                console.log(buyer);
-                                console.log(transferAmount_input);
+                                console.log(data.house.status.owner_now);
+                                console.log(data.house.status.owner_new);
+                                console.log(data.house.status.transfer_bid);
                                 console.log("------------");
                                 let houseinfo = document.createElement("tr")
                                 houseinfo.innerHTML=
                                     `
                                     <td>${data.house.houseid}</td>
                                     <td>${data.house.name}</td>
-                                    <td>${seller}</td>
-                                    <td>${buyer}</td>
-                                    <td>${transferAmount_input}</td>
-                                    <td>Nefera</td>
-                                    <td>${transfer_date}</td>
+                                    <td>${data.house.status.owner_now}</td>
+                                    <td>${data.house.status.owner_new}</td>
+                                    <td>${data.house.status.transfer_bid}</td>
+                                    <td>ServerName</td>
+                                    <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
                                 dataContainer.appendChild(houseinfo)
@@ -134,7 +134,7 @@ function loadHouseListAntica(){
                 }
                 response.json().then(function(data){
                     if(data.house.status.auction == false){
-                        if(data.house.status.onwer_new !== null){
+                        if(data.house.status.owner_new !== null){
                             var str = data.house.status.original
                             if (str.endsWith("gold coins.")==true){
                                 var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
@@ -144,20 +144,20 @@ function loadHouseListAntica(){
                                 console.log("------------");
                                 console.log(data.house.name);
                                 console.log(data.house.houseid);
-                                console.log(seller);
-                                console.log(buyer);
-                                console.log(transferAmount_input);
+                                console.log(data.house.status.owner_now);
+                                console.log(data.house.status.owner_new);
+                                console.log(data.house.status.transfer_bid);
                                 console.log("------------");
                                 let houseinfo = document.createElement("tr")
                                 houseinfo.innerHTML=
                                     `
                                     <td>${data.house.houseid}</td>
                                     <td>${data.house.name}</td>
-                                    <td>${seller}</td>
-                                    <td>${buyer}</td>
-                                    <td>${transferAmount_input}</td>
-                                    <td>Antica</td>
-                                    <td>${transfer_date}</td>
+                                    <td>${data.house.status.owner_now}</td>
+                                    <td>${data.house.status.owner_new}</td>
+                                    <td>${data.house.status.transfer_bid}</td>
+                                    <td>ServerName</td>
+                                    <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
                                 dataContainer.appendChild(houseinfo)
@@ -183,7 +183,7 @@ function loadHouseListSecura(){
                 }
                 response.json().then(function(data){
                     if(data.house.status.auction == false){
-                        if(data.house.status.onwer_new !== null){
+                        if(data.house.status.owner_new !== null){
                             var str = data.house.status.original
                             if (str.endsWith("gold coins.")==true){
                                 var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
@@ -193,20 +193,20 @@ function loadHouseListSecura(){
                                 console.log("------------");
                                 console.log(data.house.name);
                                 console.log(data.house.houseid);
-                                console.log(seller);
-                                console.log(buyer);
-                                console.log(transferAmount_input);
+                                console.log(data.house.status.owner_now);
+                                console.log(data.house.status.owner_new);
+                                console.log(data.house.status.transfer_bid);
                                 console.log("------------");
                                 let houseinfo = document.createElement("tr")
                                 houseinfo.innerHTML=
                                     `
                                     <td>${data.house.houseid}</td>
                                     <td>${data.house.name}</td>
-                                    <td>${seller}</td>
-                                    <td>${buyer}</td>
-                                    <td>${transferAmount_input}</td>
-                                    <td>Secura</td>
-                                    <td>${transfer_date}</td>
+                                    <td>${data.house.status.owner_now}</td>
+                                    <td>${data.house.status.owner_new}</td>
+                                    <td>${data.house.status.transfer_bid}</td>
+                                    <td>ServerName</td>
+                                    <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
                                 dataContainer.appendChild(houseinfo)
@@ -233,7 +233,7 @@ function loadTestList(){
                 }
                 response.json().then(function(data){
                     if(data.house.status.auction == false){
-                        if(data.house.status.onwer_new !== null){
+                        if(data.house.status.owner_new !== null){
                             var str = data.house.status.original
                             if (str.endsWith("gold coins.")==true){
                                 var seller = str.substring(str.indexOf("rented by")+10, str.indexOf("."))
@@ -243,20 +243,20 @@ function loadTestList(){
                                 console.log("------------");
                                 console.log(data.house.name);
                                 console.log(data.house.houseid);
-                                console.log(seller);
-                                console.log(buyer);
-                                console.log(transferAmount_input);
+                                console.log(data.house.status.owner_now);
+                                console.log(data.house.status.owner_new);
+                                console.log(data.house.status.transfer_bid);
                                 console.log("------------");
                                 let houseinfo = document.createElement("tr")
                                 houseinfo.innerHTML=
                                     `
                                     <td>${data.house.houseid}</td>
                                     <td>${data.house.name}</td>
-                                    <td>${seller}</td>
-                                    <td>${buyer}</td>
-                                    <td>${transferAmount_input}</td>
+                                    <td>${data.house.status.owner_now}</td>
+                                    <td>${data.house.status.owner_new}</td>
+                                    <td>${data.house.status.transfer_bid}</td>
                                     <td>ServerName</td>
-                                    <td>${transfer_date}</td>
+                                    <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
                                 dataContainer.appendChild(houseinfo)

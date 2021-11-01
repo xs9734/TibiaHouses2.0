@@ -107,7 +107,7 @@ function loadHouseListNefera(){
                                     <td>${data.house.status.owner_now}</td>
                                     <td>${data.house.status.owner_new}</td>
                                     <td>${data.house.status.transfer_bid}</td>
-                                    <td>ServerName</td>
+                                    <td>Nefera</td>
                                     <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
@@ -156,7 +156,7 @@ function loadHouseListAntica(){
                                     <td>${data.house.status.owner_now}</td>
                                     <td>${data.house.status.owner_new}</td>
                                     <td>${data.house.status.transfer_bid}</td>
-                                    <td>ServerName</td>
+                                    <td>Antica</td>
                                     <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `
@@ -205,7 +205,7 @@ function loadHouseListSecura(){
                                     <td>${data.house.status.owner_now}</td>
                                     <td>${data.house.status.owner_new}</td>
                                     <td>${data.house.status.transfer_bid}</td>
-                                    <td>ServerName</td>
+                                    <td>Secura</td>
                                     <td>${data.house.status.moving_date.date}</td>
                                     <td>${data.house.status.original}</td>
                                     `

@@ -42,24 +42,24 @@ for (let i=0;i<building.length;i++){
 
 function test(){
     dataContainer.innerHTML = "";
-    let a = formServer.value
-    let b = formCity.value
-    let c = formBuilding.value
-    let d = formOccupied.checked
-    if (b === 'Gray Beach'){
-        b='Gray%20Beach'
+    let Server = formServer.value
+    let City = formCity.value
+    let Type = formBuilding.value
+    let Status = formOccupied.checked
+    if (City === 'Gray Beach'){
+        City='Gray%20Beach'
     }
-    else if (b === 'Port Hope'){
-        b='Port%20Hope'
+    else if (City === 'Port Hope'){
+        City='Port%20Hope'
     }
-    else if (b === 'Liberty Bay'){
-        b='Liberty%20Bay'
+    else if (City === 'Liberty Bay'){
+        City='Liberty%20Bay'
     }
-    loadJSON(a,b,c,d);
+    loadJSON(Server,City,Type,Status);
 }
 
-function loadJSON(a,b,c,d){
-    let link = `https://api.tibiadata.com/v2/houses/${a}/${b}/${c}.json`
+function loadJSON(Server,City,Type,Status){
+    let link = `https://api.tibiadata.com/v2/houses/${Server}/${City}/${Type}.json`
     console.log(link)
     fetch(link).then(function(response){
         if (response.status !== 200) {
@@ -69,7 +69,7 @@ function loadJSON(a,b,c,d){
         response.json().then(function(data){
             let auctionedHomes = []
             let allHomes = []
-            if (d===false){ /*Only load unoccupied homes*/
+            if (Status===false){ /*Only load unoccupied homes*/
                 for(var i=0;i<data.houses.houses.length;i++){
                     if(data.houses.houses[i].status !== "rented"){
                         auctionedHomes.push(data.houses.houses[i])
@@ -93,7 +93,7 @@ function loadJSON(a,b,c,d){
 
                 }
             }
-            else if (d===true){ /*Load all including occupied homes*/
+            else if (Status===true){ /*Load all including occupied homes*/
                 for(var i=0;i<data.houses.houses.length;i++){
                     if(data.houses.houses[i].status !== "rented"){
                         allHomes.push(data.houses.houses[i])

@@ -5,109 +5,138 @@ $(document).ready(function(){
 });
 
 //Load Lists
-const server = ['Adra','Antica','Assombra','Astera','Belluma','Belobra','Bona','Calmera','Carnera','Celebra','Celesta','Concorda','Cosera','Damora','Descubra','Dibra','Duna','Emera','Epoca','Estela','Faluna','Ferobra','Firmera','Funera','Furia','Garnera','Gentebra','Gladera','Harmonia','Helera','Honbra','Impera','Inabra','Javibra','Jonera','Kalibra','Kenora','Libertabra','Lobera','Luminera','Lutabra','Macabra','Menera','Mitigera','Monza','Nefera','Noctera','Nossobra','Olera','Ombra','Pacembra','Pacera','Peloria','Premia','Pyra','Quelibra','Quintera','Ragna','Refugia','Relania','Relembra','Secura','Serdebra','Serenebra','Solidera','Talera','Torpera','Tortura','Unica','Utobra','Venebra','Vita','Vunira','Wintera','Wizera','Xandebra','Xylona','Yonabra','Ysolera','Zenobra','Zuna','Zunera']
+const server = ["Ambra", "Antica", "Astera", "Axera", "Belobra", "Bombra", "Bona", "Calmera", "Castela", "Celebra", "Celesta", "Collabra", "Damora", "Descubra", "Dia", "Epoca", "Esmera", "Etebra", "Ferobra", "Firmera", "Flamera", "Gentebra", "Gladera", "Gravitera", "Guerribra", "Harmonia", "Havera", "Honbra", "Impulsa", "Inabra", "Issobra", "Jacabra", "Jadebra", "Jaguna", "Kalibra", "Kardera", "Kendria", "Lobera", "Luminera", "Lutabra", "Menera", "Monza", "Mykera", "Nadora", "Nefera", "Nevia", "Obscubra", "Ombra", "Ousabra", "Pacera", "Peloria", "Premia", "Pulsera", "Quelibra", "Quintera", "Rasteibra", "Refugia", "Retalia", "Runera", "Secura", "Serdebra", "Solidera", "Syrena", "Talera", "Thyria", "Tornabra", "Ustebra", "Utobra", "Venebra", "Vitera", "Vunira", "Wadira", "Wildera", "Wintera", "Yonabra", "Yovera", "Zuna", "Zunera"]
 const city = [`Ab'dendriel`,`Ankrahmun`,`Carlin`,`Darashia`,`Edron`,'Farmine','Gray Beach',`Issavi`,`Kazordoon`,`Liberty Bay`,`Port Hope`,`Rathleton`,`Svargrond`,`Thais`,`Venore`,`Yalahar`]
-const building = ['Houses','Guildhalls']
-const dataContainer = document.getElementById("dataContainer")
-let formServer = document.getElementById("selectServer")
-let formCity = document.getElementById("selectCity")
-let formBuilding = document.getElementById("selectBuilding")
-let formOccupied = document.getElementById("occupied")
+const [dataContainer, formServer, formCity, formOccupied] = [
+    document.getElementById("dataContainer"),
+    document.getElementById("selectServer"),
+    document.getElementById("selectCity"),
+    document.getElementById("occupied")
+  ];
 
-// Populate Server Menu
-for (let i=0;i<server.length;i++){
-    let opt = server[i]
-    let el = document.createElement("option")
-    el.textContent=opt
-    el.name=opt
-    el.value=opt
-    formServer.appendChild(el)
-}
-// Populate City Menu
-for (let i=0;i<city.length;i++){
-    let opt = city[i]
-    let el = document.createElement("option")
-    el.textContent=opt
-    el.value=opt
-    formCity.appendChild(el)
-}
-// Populate Building Type
-for (let i=0;i<building.length;i++){
-    let opt = building[i]
-    let el = document.createElement("option")
-    el.textContent=opt
-    el.value=opt
-    formBuilding.appendChild(el)
+
+for (let opt of server) {
+    formServer.appendChild(Object.assign(document.createElement("option"), { textContent: opt, name: opt, value: opt }));
 }
 
-function test(){
-    dataContainer.innerHTML = "";
-    let Server = formServer.value
-    let City = formCity.value
-    let Type = formBuilding.value
-    let Status = formOccupied.checked
-    if (City === 'Gray Beach'){
-        City='Gray%20Beach'
-    }
-    else if (City === 'Port Hope'){
-        City='Port%20Hope'
-    }
-    else if (City === 'Liberty Bay'){
-        City='Liberty%20Bay'
-    }
-    loadJSON(Server,City,Type,Status);
+formCity.appendChild(Object.assign(document.createElement("option"), { textContent: "Select All", name: "Select All", value: "selectAll" }));
+for (let opt of city){
+    formCity.appendChild(Object.assign(document.createElement("option"),{textContent: opt, value: opt}));
 }
 
-function loadJSON(Server,City,Type,Status){
-    let link = `https://api.tibiadata.com/v2/houses/${Server}/${City}/${Type}.json`
-    console.log(link)
-    fetch(link).then(function(response){
-        if (response.status !== 200) {
-            console.log('Looks like there was a problem. Status Code: ' + response.status);
-            return;
+
+function handleSelectAll() {
+    const selectElement = document.getElementById("selectCity");
+    const options = selectElement.options;
+
+    if (options[0].selected) {
+        for (let i = 1; i < options.length; i++) {
+            options[i].selected = true;
         }
-        response.json().then(function(data){
-            let auctionedHomes = []
-            let allHomes = []
-            if (Status===false){ /*Only load unoccupied homes*/
-                for(var i=0;i<data.houses.houses.length;i++){
-                    if(data.houses.houses[i].status !== "rented"){
-                        auctionedHomes.push(data.houses.houses[i])
-                        console.log(auctionedHomes[i]);
-                        let houseinfo = document.createElement("tr")
-                        houseinfo.innerHTML=
-                            `
-                            <td>${auctionedHomes[i].name}</td>
-                            <td>${auctionedHomes[i].size}</td>
-                            <td></td>
-                            <td>${auctionedHomes[i].rent}</td>
-                            <td>${auctionedHomes[i].status}</td>
-                            <td></td>
-                            <td><a href="#" target="_blank">link</a></td>
-                            `
-                        dataContainer.appendChild(houseinfo)
-                    }
-                    else{
-                        auctionedHomes.push(data.houses.houses[i])
-                    }
-
-                }
-            }
-            else if (Status===true){ /*Load all including occupied homes*/
-                for(var i=0;i<data.houses.houses.length;i++){
-                    if(data.houses.houses[i].status !== "rented"){
-                        allHomes.push(data.houses.houses[i])
-                        console.log(allHomes[i]);
-                    }
-                    else{
-                        allHomes.push(data.houses.houses[i])
-                        console.log(allHomes[i]);
-                    }
-                }
-            }
-            else{
-                console.log('error')
-            }
-        })
-    })
+        options[0].selected = false;
+    }
 }
+
+// Attach the function to the change event
+document.getElementById("selectCity").addEventListener("change", handleSelectAll);
+
+
+function loadJSONForCity(Server, City, Status, rentalStatus) {
+    const link = `https://api.tibiadata.com/v4/houses/${Server}/${City}`;
+    console.log(link);
+
+    fetch(link)
+        .then(response => {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+            }
+
+            response.json().then(data => {
+                const homes = Status ? data.houses.house_list : data.houses.house_list.filter(home => !home.rented);
+
+                homes.forEach(home => {
+                    console.log(home);
+
+                    rentalStatus = home.rented ? "Rented" : "Auctioned";
+
+                    const houseinfo = document.createElement("tr");
+                    houseinfo.innerHTML = `
+                        <td>${home.name}</td>
+                        <td>${home.size}</td>
+                        <td></td>
+                        <td>${home.rent}</td>
+                        <td>${rentalStatus}</td>
+                        <td class="money">${home.auction.current_bid} gps</td>
+                        <td><a href="https://www.tibia.com/community/?subtopic=houses&page=view&houseid=${home.house_id}&world=${Server}" target="_blank">link</a></td>
+                    `;
+
+                    dataContainer.appendChild(houseinfo);
+                    applyNumberFormatting();
+                });
+            });
+        });
+}
+
+function test() {
+    dataContainer.innerHTML = "";
+    const Server = formServer.value;
+
+    // Get selected options from formCity and build an array
+    const selectedOptions = Array.from(formCity.selectedOptions).map(option => option.value);
+    const City = selectedOptions.length > 0 ? selectedOptions : [formCity.value];
+
+    console.log(City);
+
+    const Status = formOccupied.checked;
+
+    const cityMappings = {
+        'Gray Beach': 'Gray%20Beach',
+        'Port Hope': 'Port%20Hope',
+        'Liberty Bay': 'Liberty%20Bay'
+    };
+
+    // Use the mapping for each selected option
+    const mappedCities = City.map(city => cityMappings[city] || city);
+
+    // Call loadJSONForCity for each city in the array
+    mappedCities.forEach(city => loadJSONForCity(Server, city, Status));
+}
+
+
+
+function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Apply formatting to elements with the money class
+document.addEventListener("DOMContentLoaded", function() {
+    const moneyElements = document.querySelectorAll('.money');
+    moneyElements.forEach(element => {
+        const originalValue = element.textContent.trim();
+        const formattedValue = formatNumberWithCommas(originalValue);
+        element.textContent = formattedValue;
+    });
+});
+
+function applyNumberFormatting() {
+    const moneyElements = document.querySelectorAll('.money');
+    moneyElements.forEach(element => {
+        const originalValue = element.textContent.trim();
+        const formattedValue = formatNumberWithCommas(originalValue);
+        element.textContent = formattedValue;
+    });
+}
+
+function prefillFormFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const selectServerParam = urlParams.get('selectServer');
+
+    if (selectServerParam !== null) {
+        document.getElementById('selectServer').value = selectServerParam;
+    }
+}
+
+// Call the prefillFormFromURL function when the page loads
+document.addEventListener("DOMContentLoaded", prefillFormFromURL);
